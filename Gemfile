@@ -22,6 +22,8 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
 gem 'draper'
 
+gem 'activeadmin', '~> 1.0.0.pre1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -37,7 +39,6 @@ group :development, :test do
   gem 'brakeman'
   gem 'rails_best_practices'
 end
-
 group :development do
   gem 'rails_layout'
 end
