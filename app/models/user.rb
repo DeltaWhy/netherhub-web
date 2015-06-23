@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :friend_requests, ->(user) { unscope(where: :user_id).where("user_id = ? OR friend_id = ?", user.id, user.id).where(accepted: false) }, class_name: "Friendship"
   has_many :friendships, -> { where(accepted: true) }
   has_many :friends, through: :friendships, class_name: "User"
+  validates :minecraft_username, presence: true
 
   def sent_friend_requests
     Friendship.where(user: self, accepted: false)

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Friendship, type: :model do
-  let(:alice) { User.create!(email: "alice@example.com", password: "password") }
-  let(:bob) { User.create!(email: "bob@example.com", password: "password") }
+  let(:alice) { User.create!(email: "alice@example.com", password: "password", minecraft_username: "Alice") }
+  let(:bob) { User.create!(email: "bob@example.com", password: "password", minecraft_username: "Bob") }
 
   before do
     Friendship.destroy_all
