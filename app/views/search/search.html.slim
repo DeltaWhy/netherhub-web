@@ -18,6 +18,6 @@
         - @users.each do |u|
           tr
             td.avatar
-              = u.avatar(50)
-            td.name = u.minecraft_username
+              = link_to u.avatar(50), u
+            td.name = link_to u.minecraft_username, u
             td = u.friend_actions

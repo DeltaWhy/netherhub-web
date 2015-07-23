@@ -1,12 +1,11 @@
 .row
   h1 Hello #{current_user.minecraft_username}!
-- if current_user.friends.present?
+- if @friends.present?
   .row
-    h2 Your Friends
-    ul.friends
-      - current_user.friends.each do |f|
+    ul.friends-icons
+      - @friends.each do |f|
         li.friend
-          a href="#"
+          = link_to f
             = f.avatar(50)
             span.name = f.minecraft_username
 .row

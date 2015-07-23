@@ -11,7 +11,7 @@ html lang="en"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tag
 
-  body
+  body class="#{params[:controller]} #{params[:action]}"
     header
       nav.top-bar role="navigation" data-topbar=""
         ul.title-area

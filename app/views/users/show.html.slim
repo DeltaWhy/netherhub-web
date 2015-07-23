@@ -1,0 +1,13 @@
+.row
+  h1 = @user.minecraft_username
+  = @user.avatar(150)
+.row
+  h2 Friends
+  ul.friends-icons
+    - @friends.each do |f|
+      li.friend
+        = link_to f
+          = f.avatar(50)
+          span.name = f.minecraft_username
+.row
+  = @user.friend_button

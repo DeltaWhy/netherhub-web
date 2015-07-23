@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def received_friend_requests
     Friendship.where(friend: self, accepted: false)
   end
+
+  def to_param
+    minecraft_username
+  end
 end
