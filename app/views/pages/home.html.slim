@@ -1,0 +1,23 @@
+.row
+  h1 Hello #{current_user.minecraft_username}!
+- if current_user.friends.present?
+  .row
+    h2 Your Friends
+    ul.friends
+      - current_user.friends.each do |f|
+        li.friend
+          a href="#"
+            = f.avatar(50)
+            span.name = f.minecraft_username
+.row
+  h2 Find Friends
+= form_tag "/search", method: :get, id: 'search-form' do
+  .row
+    .large-6.columns
+      .row.collapse.postfix-round
+        .small-9.columns
+          input type="search" name="q" placeholder="Minecraft Username"
+        .small-3.columns
+          input.button.postfix type="submit" name="" value="Search"
+    .large-6.columns
+#search-results

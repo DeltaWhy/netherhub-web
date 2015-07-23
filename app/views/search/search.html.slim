@@ -1,0 +1,23 @@
+.row
+  h1 Find Friends
+= form_tag "/search", method: :get, id: 'search-form' do
+  .row
+    .large-6.columns
+      .row.collapse.postfix-round
+        .small-9.columns
+          input type="search" name="q" placeholder="Minecraft Username"
+        .small-3.columns
+          input.button.postfix type="submit" name="" value="Search"
+    .large-6.columns
+#search-results
+  .row
+    - if @users.blank?
+      p.no-results No results.
+    - else
+      table.results.large-12.columns
+        - @users.each do |u|
+          tr
+            td.avatar
+              = u.avatar(50)
+            td.name = u.minecraft_username
+            td = u.friend_actions
