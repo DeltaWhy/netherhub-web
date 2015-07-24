@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'pages#index'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  post 'api/authenticate'
   
   get 'search' => 'search#search'
 

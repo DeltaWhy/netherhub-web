@@ -1,3 +1,5 @@
+- content_for :title do
+  = @user.minecraft_username
 .row
   h1 = @user.minecraft_username
   = @user.avatar(150)
